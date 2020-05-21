@@ -21,25 +21,35 @@ class Admin(User):
     
 # super()
 class PotatoSalad:
-      def __init__(self, potatoes, celery, onions):
-            self.potatoes = potatoes
-            self.celery = celery
-            self.onions = onions
+  def __init__(self, potatoes, celery, onions):
+    self.potatoes = potatoes
+    self.celery = celery
+    self.onions = onions
+  def __repr__(self):
+    return "This is the original recipient"
 
 
 class SpecialPotatoSalad(PotatoSalad):
   def __init__(self, potatoes, celery, onions):
     super().__init__(potatoes, celery, onions)
     self.raisins = 40
-# ingredient = PotatoSalad("potato", "salad", "carrot")
+  
+# ingredient = PotatoSalad(3, 4, 5)
 # print(dir(ingredient))
 # print(ingredient.potatoes)
 # print(ingredient.celery)
 # print(ingredient.onions)
 
-ingredient1 = SpecialPotatoSalad("potato", "salad", "carrot")
+ingredient1 = SpecialPotatoSalad(3, 4, 5)
+print(ingredient1)
+
 print(dir(ingredient1))
 print(ingredient1.potatoes)
 print(ingredient1.celery)
 print(ingredient1.onions)
 print(ingredient1.raisins)
+
+#  an inherited class is not required to call the __init__() method of the parent class. 
+#  If no __init__() method is implemented in the inherited class, then the parent __init__() will be called automatically when an object of the inherited class is created. 
+#  If __init__() is implemented in the inherited class, then that will override the parent class method.
+#   The parent class method will NOT be called unless the call is written in the inherited class.
