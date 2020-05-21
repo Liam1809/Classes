@@ -8,6 +8,8 @@ class CandleShop:
   name = "Here's a Hot Tip: Buy Drip Candles"
   def __init__(self, stock):
     self.stock = stock
+  def __repr__(self):
+        return self.name
   # If color is out of stock, raise OutOfStock and pass a custom message.
   def buy(self, color):
     if self.stock[color] == 0:
@@ -16,6 +18,7 @@ class CandleShop:
       self.stock[color] = self.stock[color] - 1
 
 candle_shop = CandleShop({'blue': 6, 'red': 2, 'green': 0})
+print(candle_shop)
 candle_shop.buy('blue')
 
 # This should raise OutOfStock:
