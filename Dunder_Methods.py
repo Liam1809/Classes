@@ -67,3 +67,12 @@ if "Donelli" or "Paderewski" in d_and_p:
   print("This lawyer exists")
 else:
   print("unknown lawyer")
+  
+# Remember that UserGroup isn’t a list, but that it contains a list.
+#  These dunder methods allow us to use len for example, directly on the class and it will return the length of the list that UserGroup contains (in this case the list of users). 
+# Without a dunder method, len(usergroup) would result in an error. 
+  
+# The __contains__() method should always either return the values True or False to indicate whether the object “contains” the item being checked.
+#  How the class implements that check is dependent on the data contained in the class.
+#  However, the method should always return either True or False. 
+# If the method returns any other value, Python will try to convert or interpret the value as True or False and the resulting behavior may be unexpected.
